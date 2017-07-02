@@ -396,6 +396,11 @@
 		});
 
 		function getDetails(){
+			var url='https://insourcemailer.azurewebsites.net/send?to=bharanisrinivas91@gmail.com'
+			$.get("url", function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
+			});
+			
          console.log('hiii i m clicke',$('#email').val());
 		}
 	</script>
