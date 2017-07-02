@@ -396,8 +396,8 @@
 		});
 
 		function getDetails(){
-			var url='https://insourcemailer.azurewebsites.net/send?to=bharanisrinivas91@gmail.com'
-			$.get("url", function(data, status){
+			var url='https://insourcemailer.azurewebsites.net/send?to='+$('#email').val();
+			$.get(url, function(data, status){
 				alert("Data: " + data + "\nStatus: " + status);
 			});
 			
