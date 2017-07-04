@@ -357,7 +357,7 @@
 
     </div>
     </div>
-    <!--<div id="map" class="to-animate"></div>-->
+    <div id="map" class="to-animate"></div>
   </section>
 
 
@@ -422,25 +422,18 @@
     function getDetails() {
       if ($('#email').val() !== '' && $('#phone').val() !== '') {
         var url = 'https://insourcemailer.azurewebsites.net/send?to=' + $('#email').val();
-        var dataUrl = 'http://insourcehost.azurewebsites.net/insource';
-        var header={name:$('#name').val(),email:$('#email').val(),phone:$('#phone').val(),message:$('#message').val()}
-        console.log('headers',header);
+        var dataUrl = 'https://insourcehost.azurewebsites.net//insource?name'+$('#name').val()+'&email'+$('#email').val()+'&phone'+$('#phone').val()+'&message'+$('#message').val();
+       // var header={name:$('#name').val(),email:$('#email').val(),phone:$('#phone').val(),message:$('#message').val()}
+        
         $.get(url, function (data) {
           console.log('data ', data);
           //alert("Data: " + data + "\nStatus: " + status);
         });
     
-        $.ajax({
-          url: dataUrl,
-          type: 'POST',
-          headers: header,
-          dataType: 'json',
-          success: function (data) {
-            console.info(data);
-          }
+       $.post(dataUrl, function (data) {
+          console.log('data2 ', data);
+          //alert("Data: " + data + "\nStatus: " + status);
         });
-
-
         alertify.success("We got your request,we will get back to you soon !!");
       }
       else {
