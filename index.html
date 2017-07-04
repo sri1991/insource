@@ -422,7 +422,7 @@
     function getDetails() {
       if ($('#email').val() !== '' && $('#phone').val() !== '') {
         var url = 'https://insourcemailer.azurewebsites.net/send?to=' + $('#email').val();
-        var dataUrl = 'https://insourcehost.azurewebsites.net//insource?name'+$('#name').val()+'&email'+$('#email').val()+'&phone'+$('#phone').val()+'&message'+$('#message').val();
+        var dataUrl = 'https://insourcehost.azurewebsites.net//insource?name='+$('#name').val()+'&email='+$('#email').val()+'&phone='+$('#phone').val()+'&message='+$('#message').val();
        // var header={name:$('#name').val(),email:$('#email').val(),phone:$('#phone').val(),message:$('#message').val()}
         
         $.get(url, function (data) {
